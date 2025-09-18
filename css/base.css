@@ -6,11 +6,11 @@
 /* Variables básicas */
 :root {
     --bg: #ffffff;
-    --text: #222222;
+    --text: #ffffff;
     --muted: #666666;
     --accent: #f5b400;
     /* color principal */
-    --header-bg: #111827;
+    --header-bg: #11213a;
     /* gris oscuro */
     --max-width: 1000px;
     --gap: 1rem;
@@ -66,8 +66,16 @@ header .container {
 }
 
 header h1 {
+    color: white;
     font-size: 1.05rem;
     letter-spacing: 0.4px;
+}
+
+header h2 {
+    color: #ffffff;
+    /* o cualquier color que contraste */
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
 }
 
 header nav {
@@ -76,7 +84,7 @@ header nav {
 }
 
 header nav a {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-left: 12px;
     text-decoration: none;
     padding: 6px 8px;
@@ -85,7 +93,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.074);
     transform: translateY(-2px);
 }
 
@@ -199,4 +207,71 @@ footer {
     .projects-grid {
         grid-template-columns: repeat(3, 1fr)
     }
+}
+
+/* Sección Sobre mí */
+#about {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.skills {
+    margin-top: 1.5rem;
+}
+
+.skill {
+    margin-bottom: 1rem;
+}
+
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    /* arranca vacío */
+    transition: width 2s;
+    /* animación */
+}
+
+.progress-bar.html {
+    background-color: #e44d26;
+}
+
+.progress-bar.css {
+    background-color: #264de4;
+}
+
+.progress-bar.git {
+    background-color: #f1502f;
+}
+
+/* Al cargar la página, las barras se llenan */
+body.loaded .progress-bar.html {
+    width: 80%;
+}
+
+body.loaded .progress-bar.css {
+    width: 70%;
+}
+
+body.loaded .progress-bar.git {
+    width: 50%;
 }
