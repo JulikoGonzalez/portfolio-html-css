@@ -22,12 +22,11 @@
 
 
     <main>
-        <section id="about">
+        <!-- Sección Sobre mí -->
+        <section id="about" class="container">
             <h2>Sobre mí</h2>
-            <p>
-                Soy un estudiante de desarrollo web aprendiendo a crear sitios sencillos con HTML y CSS.
-                Este portfolio es un ejemplo de lo que voy construyendo paso a paso.
-            </p>
+            <p>Hola, soy Julio José Varas González, estudiante de desarrollo web. Este es un proyecto de práctica donde
+                muestro mis avances en HTML, CSS y Git.</p>
 
             <div class="skills">
                 <div class="skill">
@@ -52,12 +51,20 @@
                 </div>
             </div>
         </section>
+
     </main>
 
 
     <footer>
         <p>&copy; 2025 Julio José Varas González</p>
     </footer>
+    <script>
+        // Cuando la página termine de cargar completamente...
+        window.addEventListener("load", () => {
+            // ...añadimos la clase "loaded" al <body>
+            document.body.classList.add("loaded");
+        });
+    </script>
 
 </body>
 
