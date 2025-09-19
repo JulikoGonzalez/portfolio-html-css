@@ -6,7 +6,7 @@
 /* Variables básicas */
 :root {
     --bg: #ffffff;
-    --text: #ffffff;
+    --text: #222222;
     --muted: #666666;
     --accent: #f5b400;
     /* color principal */
@@ -83,19 +83,34 @@ header nav {
     /* ocultamos en móvil */
 }
 
+/* Navegación - estilo y hover accesible */
 header nav a {
-    color: rgb(255, 255, 255);
+    color: white;
     margin-left: 12px;
     text-decoration: none;
-    padding: 6px 8px;
+    padding: 8px 10px;
     border-radius: 6px;
-    transition: background .2s ease, transform .12s ease;
+    transition: background-color 0.22s ease, color 0.22s ease, transform 0.12s ease;
+    display: inline-block;
+    font-weight: 600;
 }
 
-header nav a:hover {
-    background: rgba(255, 255, 255, 0.074);
+/* hover */
+header nav a:hover,
+header nav a:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--accent);
+    /* color acento al pasar */
     transform: translateY(-2px);
+    outline: none;
 }
+
+/* foco visible para accesibilidad (teclado) */
+header nav a:focus-visible {
+    box-shadow: 0 0 0 3px rgba(245, 180, 0, 0.18);
+    border-radius: 6px;
+}
+
 
 /* =========================
    Main / secciones
