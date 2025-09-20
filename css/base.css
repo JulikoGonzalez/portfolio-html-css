@@ -184,17 +184,16 @@ footer {
     gap: 12px;
 }
 
-.card {
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 12px;
-    background: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+.card h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    color: var(--header-bg);
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.card h3 {
-    margin-bottom: 6px
-}
 
 /* =========================
    Media queries (escritorio)
@@ -289,4 +288,29 @@ body.loaded .progress-bar.css {
 
 body.loaded .progress-bar.git {
     width: 50%;
+}
+
+/* =========================
+   Estilos específicos para imágenes de proyectos
+   ========================= */
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover en las cards */
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
