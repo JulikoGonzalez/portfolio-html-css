@@ -25,30 +25,38 @@
             <p>Rellena el siguiente formulario para ponerte en contacto conmigo:</p>
 
             <!-- El action="#" evita envío real; puedes cambiarlo cuando tengas backend -->
-            <form action="#" method="post" autocomplete="on">
-                <div class="form-row">
-                    <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
-                    <input type="text" id="nombre" name="nombre" required />
+            <form action="#" method="post" autocomplete="on" aria-label="Formulario de contacto">
+
+                <div class="form-two-col">
+                    <div class="form-row">
+                        <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required aria-required="true" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="apellidos">Apellidos <span aria-hidden="true">*</span></label>
+                        <input type="text" id="apellidos" name="apellidos" required aria-required="true" />
+                    </div>
                 </div>
 
-                <div class="form-row">
-                    <label for="apellidos">Apellidos <span aria-hidden="true">*</span></label>
-                    <input type="text" id="apellidos" name="apellidos" required />
-                </div>
+
 
                 <div class="form-row">
                     <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
-                    <input type="tel" id="telefono" name="telefono" required pattern="^\+?[0-9\s\-]{7,15}$"
-                        placeholder="+34 600 123 456" />
+                    <input type="tel" id="telefono" name="telefono" required aria-required="true"
+                        pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+34 600 123 456"
+                        title="Introduce un teléfono válido (ej: +34 600 123 456)" />
                 </div>
 
-                <fieldset class="form-row">
+                <fieldset class="form-row" aria-describedby="como-me-conociste-desc">
                     <legend>¿Cómo me conociste? <span aria-hidden="true">*</span></legend>
+                    <div id="como-me-conociste-desc" hidden>Selecciona una opción para indicar cómo me conociste.</div>
                     <label><input type="radio" name="conociste" value="universidad" required /> Universidad</label>
                     <label><input type="radio" name="conociste" value="keepcoding" /> Keepcoding kick-off</label>
                     <label><input type="radio" name="conociste" value="colegio" /> Colegio</label>
                     <label><input type="radio" name="conociste" value="github" /> En Github</label>
                 </fieldset>
+
 
                 <div class="form-row">
                     <label for="github">Tag de GitHub (ej: @usuario)</label>
@@ -57,17 +65,17 @@
 
                 <div class="form-row">
                     <label for="mensaje">Mensaje (máx. 180 caracteres) <span aria-hidden="true">*</span></label>
-                    <textarea id="mensaje" name="mensaje" maxlength="180" rows="5" required></textarea>
-                </div>
+                    <input id="github" name="github" type="text" placeholder="@usuario" pattern="^@[^\s]+"
+                        title="@usuario (sin espacios)" />
 
-                <div class="form-row">
-                    <label><input type="checkbox" name="newsletter" /> Deseo recibir la newsletter</label>
-                </div>
+                    <div class="form-row">
+                        <label><input type="checkbox" name="newsletter" /> Deseo recibir la newsletter</label>
+                    </div>
 
-                <div class="form-actions">
-                    <button type="submit">Guardar</button>
-                    <button type="reset">Reset</button>
-                </div>
+                    <div class="form-actions">
+                        <button type="submit">Guardar</button>
+                        <button type="reset">Reset</button>
+                    </div>
             </form>
         </section>
     </main>
