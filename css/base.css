@@ -314,3 +314,33 @@ body.loaded .progress-bar.git {
     transform: translateY(-6px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
+/* Formulario contacto - layout simple */
+form .form-row {
+    margin-bottom: 12px;
+}
+
+form fieldset {
+    border: none;
+    padding: 0;
+    margin: 10px 0 14px;
+}
+
+form fieldset label {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+@media(min-width:768px) {
+    .form-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}

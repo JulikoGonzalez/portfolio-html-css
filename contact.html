@@ -2,14 +2,13 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Práctica</title>
-    <link rel="stylesheet" href="css/base.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Portfolio</title>
+    <link rel="stylesheet" href="css/base.css" />
 </head>
 
 <body>
-
     <header>
         <h1>Julio José Varas González</h1>
         <h2>Portfolio</h2>
@@ -20,29 +19,62 @@
         </nav>
     </header>
 
+    <main class="container">
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contacto</h2>
+            <p>Rellena el siguiente formulario para ponerte en contacto conmigo:</p>
 
-    <main>
-        <h2>Contacto</h2>
-        <p>Rellena este formulario para ponerte en contacto conmigo:</p>
+            <!-- El action="#" evita envío real; puedes cambiarlo cuando tengas backend -->
+            <form action="#" method="post" autocomplete="on">
+                <div class="form-row">
+                    <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required />
+                </div>
 
-        <form>
-            <label for="name">Nombre:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+                <div class="form-row">
+                    <label for="apellidos">Apellidos <span aria-hidden="true">*</span></label>
+                    <input type="text" id="apellidos" name="apellidos" required />
+                </div>
 
-            <label for="email">Correo electrónico:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+                <div class="form-row">
+                    <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
+                    <input type="tel" id="telefono" name="telefono" required pattern="^\+?[0-9\s\-]{7,15}$"
+                        placeholder="+34 600 123 456" />
+                </div>
 
-            <label for="message">Mensaje:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <fieldset class="form-row">
+                    <legend>¿Cómo me conociste? <span aria-hidden="true">*</span></legend>
+                    <label><input type="radio" name="conociste" value="universidad" required /> Universidad</label>
+                    <label><input type="radio" name="conociste" value="keepcoding" /> Keepcoding kick-off</label>
+                    <label><input type="radio" name="conociste" value="colegio" /> Colegio</label>
+                    <label><input type="radio" name="conociste" value="github" /> En Github</label>
+                </fieldset>
 
-            <button type="submit">Enviar</button>
-        </form>
+                <div class="form-row">
+                    <label for="github">Tag de GitHub (ej: @usuario)</label>
+                    <input id="github" name="github" type="text" placeholder="@usuario" pattern="^@[^\s]+" />
+                </div>
+
+                <div class="form-row">
+                    <label for="mensaje">Mensaje (máx. 180 caracteres) <span aria-hidden="true">*</span></label>
+                    <textarea id="mensaje" name="mensaje" maxlength="180" rows="5" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label><input type="checkbox" name="newsletter" /> Deseo recibir la newsletter</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Guardar</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Julio José Varas González</p>
     </footer>
-
 </body>
 
 </html>
