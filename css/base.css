@@ -456,3 +456,16 @@ header nav a:focus-visible {
         width: 50%;
     }
 }
+
+/* Responsive básico */
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
