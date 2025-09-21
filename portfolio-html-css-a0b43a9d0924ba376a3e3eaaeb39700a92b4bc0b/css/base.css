@@ -1,0 +1,613 @@
+/* base.css - Estilos básicos
+   Mobile-first, simple y claro*/
+
+/* Variables básicas */
+:root {
+    --bg: #ffffff;
+    --text: #222222;
+    --muted: #666666;
+    --accent: #f5b400;
+    /* color principal */
+    --header-bg: #11213a;
+    /* gris oscuro */
+    --max-width: 1000px;
+    --gap: 1rem;
+}
+
+/* Reset muy básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%
+}
+
+/* Contenedor central */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header / Nav
+   Mobile first: nav oculto en móvil, visible en escritorio */
+header {
+    background: var(--header-bg);
+    color: white;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+}
+
+header h1 {
+    color: white;
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
+}
+
+header h2 {
+    color: var(--accent);
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+header nav {
+    display: none;
+    /* ocultamos en móvil */
+}
+
+/* Navegación - estilo y hover accesible */
+header nav a {
+    color: white;
+    margin-left: 12px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background-color 0.22s ease, color 0.22s ease, transform 0.12s ease;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* hover */
+header nav a:hover,
+header nav a:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--accent);
+    /* color acento al pasar */
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* foco visible para accesibilidad (teclado) */
+header nav a:focus-visible {
+    box-shadow: 0 0 0 3px rgba(245, 180, 0, 0.18);
+    border-radius: 6px;
+}
+
+h2 {
+    margin-bottom: 8px;
+    color: var(--header-bg);
+}
+
+section {
+    margin-bottom: 20px
+}
+
+/* Bienvenida */
+main p {
+    color: var(--muted)
+}
+
+/* Formularios (estilos simples)*/
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    resize: vertical;
+}
+
+button {
+    background: var(--accent);
+    color: #111;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.95;
+    transform: translateY(-1px)
+}
+
+/* Footer */
+footer {
+    margin-top: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding: 12px 0;
+}
+
+/*  Estilos para proyectos (cards simples) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.card h3 {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    color: var(--header-bg);
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* Media queries (escritorio)*/
+
+@media (min-width: 768px) {
+    body {
+        padding: 24px
+    }
+
+    header nav {
+        display: block
+    }
+
+    header h1 {
+        font-size: 1.1rem
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (min-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+/* Sección Sobre mí */
+#about {
+    max-width: 800px;
+    /* ancho máximo para que no se expanda demasiado */
+    margin: 20px auto;
+    /* centrado horizontal */
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.skills {
+    margin-top: 1.5rem;
+}
+
+.skill {
+    margin-bottom: 1rem;
+}
+
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+/* BARRAS DE PROGRESO - animación sin JS (keyframes) */
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+
+/* keyframes que animan la anchura al cargar (no necesita JS) */
+@keyframes grow-html {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes grow-css {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes grow-git {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+
+/* Formulario contacto - layout simple */
+form .form-row {
+    margin-bottom: 12px;
+}
+
+form fieldset {
+    border: none;
+    padding: 0;
+    margin: 10px 0 14px;
+}
+
+form fieldset label {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+
+@media(min-width:768px) {
+    .form-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
+
+/* Pequeños ajustes para cards: texto y botón */
+.card-excerpt {
+    color: #666;
+    /* texto más suave que el título */
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* Estilo para el enlace / botón de la card */
+.card-btn {
+    display: inline-block;
+    background: var(--header-bg);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .18s ease, transform .12s ease;
+}
+
+.card-btn:hover,
+.card-btn:focus {
+    background: var(--accent);
+    color: #111;
+    transform: translateY(-3px);
+}
+
+/* Visual validation hints */
+input:invalid,
+textarea:invalid {
+    outline: 2px solid rgba(255, 0, 0, 0.06);
+}
+
+input:focus:invalid,
+textarea:focus:invalid {
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.06);
+}
+
+/* Mejora foco teclado en nav */
+header nav a:focus-visible {
+    outline: 3px solid rgba(245, 180, 0, 0.18);
+    border-radius: 6px;
+}
+
+/* cards */
+.card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* BARRAS DE PROGRESO - animación sin JS (se desencadena al cargar la página) */
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), #ffd86b);
+    border-radius: 999px;
+}
+
+/* animaciones separadas por habilidad */
+.progress-bar.html {
+    animation: grow-html 1.4s forwards;
+    animation-delay: .15s;
+}
+
+.progress-bar.css {
+    animation: grow-css 1.4s forwards;
+    animation-delay: .25s;
+}
+
+.progress-bar.git {
+    animation: grow-git 1.4s forwards;
+    animation-delay: .35s;
+}
+
+/* keyframes que aumentan la anchura hasta el % deseado */
+@keyframes grow-html {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes grow-css {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes grow-git {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+/* Responsive básico */
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BANNER responsive: imagen mobile por defecto, otra para desktop */
+.banner {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url('img/banner-mobile.jpg');
+    /* imagen mobile por defecto */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+/* caja semi-transparente para el texto del banner */
+.banner .banner-content {
+    padding: 28px 12px;
+    background: rgba(0, 0, 0, 0.26);
+    border-radius: 8px;
+}
+
+/* Desktop: cambia la imagen y altura */
+@media (min-width: 768px) {
+    .banner {
+        min-height: 300px;
+        background-image: url('img/banner-desktop.jpg');
+    }
+}
+
+/* ===== Estilos ===== */
+
+/* 1. Hacer que la sección principal ocupe todo el alto de la pantalla */
+
+/* 2. Asegurar que las imágenes sean siempre responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. Tipografía general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== video.html styles - fadeIn + responsive video ===== */
+.video-wrap {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* vídeo responsivo y borde/sombra */
+.video-wrap video,
+.video-wrap iframe {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeInUp 0.9s ease forwards;
+}
+
+/* animación fadeIn (sube y aparece) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* pequeño ajuste para que el <main> respire en móvil */
+#video-section {
+    padding: 12px 0 32px;
+}
+
+/* si necesitas asegurar el contenedor */
+@media (min-width: 768px) {
+    #video-section {
+        padding: 18px 0 48px;
+    }
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-grid .socials a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.footer-grid .socials a:hover {
+    color: var(--accent);
+}
+
+@media(min-width:768px) {
+    .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.foto-banner {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    /* 🔥 fuerza a mostrar la parte superior de la imagen */
+    border: 2px solid #fff;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    /* alinea verticalmente imagen y texto */
+    justify-content: flex-start;
+    /* los manda a la izquierda */
+    gap: 1rem;
+    /* espacio entre la foto y el nombre */
+}
+
+.foto-banner {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #fff;
+    margin: 0;
+    /* quitamos los márgenes que la centraban */
+}
+
+/* Reducir espacio debajo del header */
+header {
+    padding: 8px 0;
+    margin-bottom: 6px;
+}
+
+
+/* Reducir espacio dentro del banner */
+.banner {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 0;
+    margin-bottom: 12px;
+    background-image: url('img/banner-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+@media (min-width:768px) {
+    .banner {
+        min-height: 160px;
+        background-image: url('img/banner-desktop.jpg');
+    }
+}
+
+
+/* Reducir espacio entre el banner y la sección "Sobre mí" */
+#about {
+    margin-top: 10px;
+}

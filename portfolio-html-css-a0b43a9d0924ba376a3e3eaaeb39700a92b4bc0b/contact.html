@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Portfolio</title>
+    <link rel="stylesheet" href="css/base.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="media/foto-portfolio.jpg" alt="Foto de Julio José Varas González" class="foto-banner">
+            <div>
+                <h1>Julio José Varas González</h1>
+                <h2>Portfolio</h2>
+            </div>
+            <nav aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="projects.html">Proyectos</a>
+                <a href="contact.html">Contacto</a>
+                <a href="video.html">Vídeo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contacto</h2>
+            <p>Rellena el siguiente formulario para ponerte en contacto conmigo:</p>
+
+            <!-- El action="#" evita envío real; puedes cambiarlo cuando tengas backend -->
+            <form action="#" method="post" autocomplete="on" aria-label="Formulario de contacto">
+
+                <div class="form-two-col">
+                    <div class="form-row">
+                        <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required aria-required="true"
+                            autocomplete="given-name" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="apellidos">Apellidos <span aria-hidden="true">*</span></label>
+                        <input type="text" id="apellidos" name="apellidos" required aria-required="true"
+                            autocomplete="family-name" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
+                    <input type="tel" id="telefono" name="telefono" required aria-required="true"
+                        pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+34 600 123 456"
+                        title="Introduce un teléfono válido (ej: +34 600 123 456)" autocomplete="tel" />
+                </div>
+
+                <fieldset class="form-row" role="radiogroup" aria-required="true">
+                    <legend>¿Cómo me conociste? <span aria-hidden="true">*</span></legend>
+                    <label><input type="radio" name="conociste" value="universidad" required /> Universidad</label>
+                    <label><input type="radio" name="conociste" value="keepcoding" /> Keepcoding kick-off</label>
+                    <label><input type="radio" name="conociste" value="colegio" /> Colegio</label>
+                    <label><input type="radio" name="conociste" value="github" /> En Github</label>
+                </fieldset>
+
+                <div class="form-row">
+                    <label for="github">Tag de GitHub (ej: @usuario)</label>
+                    <input id="github" name="github" type="text" placeholder="@usuario" pattern="^@[^\s]+"
+                        title="@usuario (ej: @miusuario)" />
+                </div>
+
+                <div class="form-row">
+                    <label for="mensaje">Mensaje (máx. 180 caracteres) <span aria-hidden="true">*</span></label>
+                    <textarea id="mensaje" name="mensaje" maxlength="180" rows="5" required></textarea>
+                </div>
+
+                <!-- Checkbox newsletter (requisito de la práctica) -->
+                <div class="form-row">
+                    <label><input type="checkbox" id="newsletter" name="newsletter" /> Deseo recibir la
+                        newsletter</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Guardar</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <p>&copy; 2025 Julio José Varas González</p>
+            <div class="socials">
+                <a href="https://github.com/JulikoGonzalez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.instagram.com/Juliko_vg_98" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
