@@ -500,3 +500,93 @@ header nav a:focus-visible {
         background-image: url('img/banner-desktop.jpg');
     }
 }
+
+/* ===== Estilos Punto 2 (práctica) ===== */
+
+/* 1. Hacer que la sección principal ocupe todo el alto de la pantalla */
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Asegurar que las imágenes sean siempre responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. Tipografía general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Navegación: estilos mínimos */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0077cc;
+}
+
+/* ===== video.html styles - fadeIn + responsive video ===== */
+.video-wrap {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* vídeo responsivo y borde/sombra */
+.video-wrap video,
+.video-wrap iframe {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeInUp 0.9s ease forwards;
+}
+
+/* animación fadeIn (sube y aparece) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* pequeño ajuste para que el <main> respire en móvil */
+#video-section {
+    padding: 12px 0 32px;
+}
+
+/* si necesitas asegurar el contenedor */
+@media (min-width: 768px) {
+    #video-section {
+        padding: 18px 0 48px;
+    }
+}
