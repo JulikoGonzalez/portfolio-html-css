@@ -469,3 +469,34 @@ header nav a:focus-visible {
         grid-template-columns: 1fr;
     }
 }
+
+/* BANNER responsive: imagen mobile por defecto, otra para desktop */
+.banner {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url('img/banner-mobile.jpg');
+    /* imagen mobile por defecto */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+/* caja semi-transparente para el texto del banner */
+.banner .banner-content {
+    padding: 28px 12px;
+    background: rgba(0, 0, 0, 0.26);
+    border-radius: 8px;
+}
+
+/* Desktop: cambia la imagen y altura */
+@media (min-width: 768px) {
+    .banner {
+        min-height: 300px;
+        background-image: url('img/banner-desktop.jpg');
+    }
+}
