@@ -248,6 +248,7 @@ footer {
     margin-bottom: 0.3rem;
 }
 
+/* BARRAS DE PROGRESO - animación sin JS (keyframes) */
 .progress {
     background-color: #ddd;
     border-radius: 5px;
@@ -258,34 +259,55 @@ footer {
 .progress-bar {
     height: 100%;
     width: 0;
-    /* arranca vacío */
-    transition: width 2s;
-    /* animación */
+    background: linear-gradient(90deg, var(--accent), #ffd86b);
+    border-radius: 999px;
 }
 
+/* animaciones por habilidad (sin JS) */
 .progress-bar.html {
-    background-color: #e44d26;
+    animation: grow-html 1.4s forwards;
+    animation-delay: .15s;
 }
 
 .progress-bar.css {
-    background-color: #264de4;
+    animation: grow-css 1.4s forwards;
+    animation-delay: .28s;
 }
 
 .progress-bar.git {
-    background-color: #f1502f;
+    animation: grow-git 1.4s forwards;
+    animation-delay: .40s;
 }
 
-/* Al cargar la página, las barras se llenan */
-body.loaded .progress-bar.html {
-    width: 80%;
+/* keyframes que animan la anchura al cargar (no necesita JS) */
+@keyframes grow-html {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 80%;
+    }
 }
 
-body.loaded .progress-bar.css {
-    width: 70%;
+@keyframes grow-css {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 70%;
+    }
 }
 
-body.loaded .progress-bar.git {
-    width: 50%;
+@keyframes grow-git {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50%;
+    }
 }
 
 
