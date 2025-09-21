@@ -194,9 +194,8 @@ footer {
 }
 
 
-/* =========================
-   Media queries (escritorio)
-   ========================= */
+/* Media queries (escritorio)*/
+
 @media (min-width: 768px) {
     body {
         padding: 24px
@@ -501,7 +500,7 @@ header nav a:focus-visible {
     }
 }
 
-/* ===== Estilos Punto 2 (práctica) ===== */
+/* ===== Estilos ===== */
 
 /* 1. Hacer que la sección principal ocupe todo el alto de la pantalla */
 main {
@@ -588,5 +587,30 @@ nav a:hover {
 @media (min-width: 768px) {
     #video-section {
         padding: 18px 0 48px;
+    }
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-grid .socials a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.footer-grid .socials a:hover {
+    color: var(--accent);
+}
+
+@media(min-width:768px) {
+    .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

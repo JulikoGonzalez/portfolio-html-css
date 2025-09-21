@@ -15,7 +15,7 @@
             <h1>Julio José Varas González</h1>
             <h2>Portfolio</h2>
             <nav aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
+                <a href="index.html" aria-current="page">Inicio</a>
                 <a href="projects.html">Proyectos</a>
                 <a href="contact.html">Contacto</a>
                 <a href="video.html">Vídeo</a>
@@ -35,7 +35,7 @@
         </section>
 
         <!-- Sección Sobre mí -->
-        <section id="about">
+        <section id="about" class="container">
             <h2>Sobre mí</h2>
             <p>
                 Hola, soy <strong>Julio José Varas González</strong>, un apasionado del fitness, la salud y la
@@ -45,30 +45,30 @@
                 web.
             </p>
 
-            <div class="skills">
-                <h3>Habilidades</h3>
-
-                <div class="skill">
-                    <span>HTML</span>
-                    <div class="progress">
-                        <div class="progress-bar html"></div>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span>CSS</span>
-                    <div class="progress">
-                        <div class="progress-bar css"></div>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <span>Git</span>
-                    <div class="progress">
-                        <div class="progress-bar git"></div>
-                    </div>
+            <div class="skill">
+                <span>HTML</span>
+                <div class="progress" aria-hidden="false">
+                    <div class="progress-bar html" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                        aria-valuenow="80" aria-label="HTML 80 por ciento"></div>
                 </div>
             </div>
+
+            <div class="skill">
+                <span>CSS</span>
+                <div class="progress" aria-hidden="false">
+                    <div class="progress-bar css" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                        aria-valuenow="70" aria-label="CSS 70 por ciento"></div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span>Git</span>
+                <div class="progress" aria-hidden="false">
+                    <div class="progress-bar git" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                        aria-valuenow="50" aria-label="Git 50 por ciento"></div>
+                </div>
+            </div>
+
         </section>
 
 
@@ -76,8 +76,15 @@
 
 
     <footer>
-        <p>&copy; 2025 Julio José Varas González</p>
+        <div class="container footer-grid">
+            <p>&copy; 2025 Julio José Varas González</p>
+            <div class="socials">
+                <a href="https://github.com/JulikoGonzalez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.instagram.com/Juliko_vg_98" target="_blank" rel="noopener">instagram</a>
+            </div>
+        </div>
     </footer>
+
 
 </body>
 
